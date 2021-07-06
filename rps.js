@@ -13,13 +13,13 @@ let compScore = 0;
 function gamePlay(playerSelection, computerSelection){
     if (playerSelection.toLowerCase() == computerSelection.toLowerCase()){
         return('TIE!!!!! You chose ' + playerSelection +' and so did the computer')
-    } else if(playerSelection.toLowerCase() == 'rock' && computerSelection.toLowerCase !== 'paper'){
+    } else if(playerSelection.toLowerCase() == 'rock' && computerSelection.toLowerCase() !== 'paper'){
         playerScore++;
         return ('player wins, ' + playerSelection + ' beats ' + computerSelection);   
-    } else if (playerSelection.toLowerCase() == 'paper' && computerSelection.toLowerCase !== 'scissors'){
+    } else if (playerSelection.toLowerCase() == 'paper' && computerSelection.toLowerCase() !== 'scissors'){
         playerScore++;
         return ('player wins, ' + playerSelection + ' beats ' + computerSelection);
-    }else if (playerSelection.toLowerCase() == 'scissors' && computerSelection.toLowerCase !=='rock'){
+    }else if (playerSelection.toLowerCase() == 'scissors' && computerSelection.toLowerCase() !=='rock'){
         playerScore++;
         return ('player wins, ' + playerSelection + ' beats ' + computerSelection);
     }else{

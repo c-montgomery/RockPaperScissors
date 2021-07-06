@@ -1,0 +1,41 @@
+html{
+background-color: rgb(44, 43, 43);
+}
+
+main{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-grow: 1;
+    padding-top: 100px;
+    
+}
+
+header div{
+    justify-content: space-between;
+}
+button{
+    width: 30vw;
+    height: 30vh;
+    border-radius: 12px;
+}
+.rock{
+    background: url('rock.png');
+    background-size: cover;
+}
+.paper{
+    background: url('paper.png');
+    background-size: cover;
+}
+.scissors{
+    background: url('scissors.png') no-repeat;
+    background-size: contain;
+    
+
+    
+}
+
+button:hover{
+    background-color: rgb(156, 211, 211);
+    box-shadow: 10px 5px 5px rgba(9, 9, 9, 0.8);
+}
