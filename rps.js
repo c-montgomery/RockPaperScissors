@@ -1,53 +1,84 @@
-//issue with rock beating paper needs fixed
+//create game display text in header
+let output  = document.querySelector('.output');
+let para = document.createElement('p');
+para.textContent = 'Make a choice...'
+output.appendChild(para);
+
+let rockButton = document.querySelector('.rock');
+let paperButton = document.querySelector('.paper');
+let scissorsButton = document.querySelector('.scissors');
+
+rockButton.addEventListener('click', choose);
+paperButton.addEventListener('click', choose);
+scissorsButton.addEventListener('click', choose);
+
+function choose(e){
+    switch(e.target.className){
+      case 'rock':
+        console.log('got to rock')
+        play('rock');
+        console.log('ran function')
+        break;
+      case 'paper':
+        play('paper');
+        break;
+      case 'scissors':
+        play('scissors');
+        break;
+      default:
+        console.log('ERROR, failure to select option');
+    }
+}
+
+
 //Returns random choice of RPS
 array = ['Rock', 'Paper', 'Scissors'];
 function computerPlay(){
     let compChoice = array[Math.floor(Math.random() * 3)];
-    console.log('comp picked ' + compChoice)
+    
     return compChoice;
 }
 
 let playerScore = 0;
 let compScore = 0;
+let visiblePlayerScore = document.querySelector('.player')
+let visibleCompScore= document.querySelector('.computer')
+
 //compares choices, chooses winner, increments score
 function gamePlay(playerSelection, computerSelection){
+    
+
     if (playerSelection.toLowerCase() == computerSelection.toLowerCase()){
         return('TIE!!!!! You chose ' + playerSelection +' and so did the computer')
     } else if(playerSelection.toLowerCase() == 'rock' && computerSelection.toLowerCase() !== 'paper'){
         playerScore++;
+        visiblePlayerScore.textContent = playerScore;
         return ('player wins, ' + playerSelection + ' beats ' + computerSelection);   
     } else if (playerSelection.toLowerCase() == 'paper' && computerSelection.toLowerCase() !== 'scissors'){
         playerScore++;
+        visiblePlayerScore.textContent = playerScore;
         return ('player wins, ' + playerSelection + ' beats ' + computerSelection);
     }else if (playerSelection.toLowerCase() == 'scissors' && computerSelection.toLowerCase() !=='rock'){
         playerScore++;
+        visiblePlayerScore.textContent = playerScore;
         return ('player wins, ' + playerSelection + ' beats ' + computerSelection);
     }else{
         compScore++;
+        visibleCompScore.textContent = compScore
         return ('comp wins, ' + playerSelection + ' is beaten by ' + computerSelection)
     }
-}
+}   
+    
+
+
 //obtains player choice, informs of computer choice
-function play(){
-    
-    let playerSelection = prompt('Pick rock, paper or scissors')
-    const computerSelection = computerPlay();
-    alert('computer picked ' + computerSelection)
-    let result = gamePlay(playerSelection, computerSelection)
-    console.log(result);
-    alert(result);
-    
-}
-//runs game 5 times, determines champion
-function game(){
-    for (let i = 0; i < 5; i++){
-        play();
-        alert('player: ' + playerScore + ' comp: ' + compScore )
-    }
-    if (playerScore >  compScore){
-        alert('Player is the CHAMPION')
-    } else{ 
-        alert('Computer demolishes player')
+function play(choice){
+    if (playerScore + compScore < 5){
+        let playerSelection = choice
+        const computerSelection = computerPlay();
+        let result = gamePlay(playerSelection, computerSelection)
+        para.textContent = result;
+    } else{
+        para.textContent = "GAME OVER"
     }
 }
-game();

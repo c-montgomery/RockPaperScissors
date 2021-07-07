@@ -1,23 +1,39 @@
 html{
-background-color: rgb(44, 43, 43);
+background-color: rgb(49, 49, 49);
 }
 
 main{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    flex-grow: 1;
     padding-top: 100px;
+    
     
 }
 
 header div{
-    justify-content: space-between;
+    background-color: rgb(10, 10, 10);
+    justify-content: space-around;
+    color: gold;
+    text-align: center;
+    height: 10vh;
+    font-size: 20px;
+    vertical-align: middle;
+    padding-top: 10px;
+    
+    
+    
 }
+
+
 button{
     width: 30vw;
     height: 30vh;
     border-radius: 12px;
+    margin-top: 20px;
+    border: grey 2px solid;
+    font-size: 29px;
+    text-shadow: 5px 5px 10px #d1cf80;
 }
 .rock{
     background: url('rock.png');
@@ -38,4 +54,19 @@ button{
 button:hover{
     background-color: rgb(156, 211, 211);
     box-shadow: 10px 5px 5px rgba(9, 9, 9, 0.8);
+    transform: scale(1.1)
+}
+
+
+.footer{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 40px;
+    color: white;
+}
+.score{
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    font-size: 50px;
 }
