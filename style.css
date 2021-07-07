@@ -10,8 +10,13 @@ main{
     
     
 }
+p{
+    color: gold;
+    font-size: 40px;
+    text-align: center;
+}
 
-header div{
+.title{
     background-color: rgb(10, 10, 10);
     justify-content: space-around;
     color: gold;
@@ -19,9 +24,7 @@ header div{
     height: 10vh;
     font-size: 20px;
     vertical-align: middle;
-    padding-top: 10px;
-    
-    
+    padding-top: 10px;  
     
 }
 
@@ -34,25 +37,27 @@ button{
     border: grey 2px solid;
     font-size: 29px;
     text-shadow: 5px 5px 10px #0e0e0e;
+    background-color: grey;
     
 }
 .rock{
     
-    background: url('rock.png') ;
-    background-size: cover;
-    z-index: -1;
+    background: url('rock.svg') no-repeat;
+    background-size: contain;
+    background-position: center;
     
 }
 .paper{
-    background: url('paper.png') no-repeat;
+    background: url('paper.svg') no-repeat;
     background-size: contain;
+    background-position: center;
 
 }
 .scissors{
     background: url('scissors.png') no-repeat;
     background-size: contain;
     color:hsl(0, 0%, 100%);
-   background-position: center;
+    background-position: center;
     
 
     
@@ -76,4 +81,20 @@ button:hover{
     justify-content: space-around;
     color: white;
     font-size: 50px;
+}
+@media screen and (min-width: 2121px) {
+    .title{
+        font-size: 80px;
+    }
+    p{
+        color: gold;
+        font-size: 40px;
+        text-align: center;
+    }
+    .footer{
+        font-size: 50px;
+    }
+    .score{
+        font-size: 100px;
+    }
 }
