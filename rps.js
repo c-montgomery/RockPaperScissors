@@ -57,27 +57,38 @@ let visibleCompScore= document.querySelector('.computer')
 //compares choices, chooses winner, increments score
 function gamePlay(playerSelection, computerSelection){
     
-    if (playerSelection.toLowerCase() == computerSelection.toLowerCase()){
-        return('TIE! You chose ' + playerSelection +' and so did the computer')
-    } else if(playerSelection.toLowerCase() == 'rock' && computerSelection.toLowerCase() !== 'paper'){
-        playerScore++;
-        visiblePlayerScore.textContent = playerScore;
-        return ('Player wins, ' + playerSelection + ' beats the computer\'s ' + computerSelection);   
-    } else if (playerSelection.toLowerCase() == 'paper' && computerSelection.toLowerCase() !== 'scissors'){
-        playerScore++;
-        visiblePlayerScore.textContent = playerScore;
-        return ('Player wins, ' + playerSelection + '  beats the computer\'s ' + computerSelection);
-    }else if (playerSelection.toLowerCase() == 'scissors' && computerSelection.toLowerCase() !=='rock'){
-        playerScore++;
-        visiblePlayerScore.textContent = playerScore;
-        return ('Player wins, ' + playerSelection + ' beats the computer\'s ' + computerSelection);
-    }else{
-        compScore++;
-        visibleCompScore.textContent = compScore
-        return ('Computer chose ' + computerSelection +' beating your' + playerSelection  )
-    }
-}   
 
+        if (playerSelection.toLowerCase() == computerSelection.toLowerCase()){
+            return('TIE! You chose ' + playerSelection +' and so did the computer')
+        } else if(playerSelection.toLowerCase() == 'rock' && computerSelection.toLowerCase() !== 'paper'){
+            playerScore++;
+            visiblePlayerScore.textContent = playerScore;
+            return ('Player wins, ' + playerSelection + ' beats the computer\'s ' + computerSelection);   
+        } else if (playerSelection.toLowerCase() == 'paper' && computerSelection.toLowerCase() !== 'scissors'){
+            playerScore++;
+            visiblePlayerScore.textContent = playerScore;
+            return ('Player wins, ' + playerSelection + '  beats the computer\'s ' + computerSelection);
+        }else if (playerSelection.toLowerCase() == 'scissors' && computerSelection.toLowerCase() !=='rock'){
+            playerScore++;
+            visiblePlayerScore.textContent = playerScore;
+            return ('Player wins, ' + playerSelection + ' beats the computer\'s ' + computerSelection);
+        }else{
+            compScore++;
+            visibleCompScore.textContent = compScore
+            return ('Computer chose ' + computerSelection +' beating your ' + playerSelection  )
+        }
+    }   
+function checkEndGame(){
+    if (playerScore + compScore >= 5){
+        if (playerScore > compScore){
+            para.textContent = 'MAN OVER MACHINE!'
+        } else {
+            para.textContent = 'MACHINE OVER MAN'
+        }
+    } else{
+        return 0;
+    }
+}
 //obtains player choice, informs of computer choice
 function play(choice){
     if (choice !== 'endGame'){
@@ -85,12 +96,8 @@ function play(choice){
         const computerSelection = computerPlay();
         let result = gamePlay(playerSelection, computerSelection)
         para.textContent = result;
-    }else{
-        if (playerScore > compScore){
-            para.textContent = 'MAN OVER MACHINE!'
-        } else {
-            para.textContent = 'MACHINE OVER MAN'
-        }
+        checkEndGame();
     }
+    
 }
 

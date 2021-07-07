@@ -12,7 +12,7 @@ main{
 }
 p{
     color: gold;
-    font-size: 40px;
+    font-size: 35px;
     text-align: center;
 }
 
@@ -21,8 +21,8 @@ p{
     justify-content: space-around;
     color: gold;
     text-align: center;
-    height: 10vh;
-    font-size: 20px;
+    height: 16vh;
+    font-size: 30px;
     vertical-align: middle;
     padding-top: 10px;  
     
@@ -84,7 +84,8 @@ button:hover{
 }
 @media screen and (min-width: 2121px) {
     .title{
-        font-size: 80px;
+        font-size: 70px;
+        padding-bottom: 5px;
     }
     p{
         color: gold;
@@ -98,3 +99,4 @@ button:hover{
         font-size: 100px;
     }
 }
+
