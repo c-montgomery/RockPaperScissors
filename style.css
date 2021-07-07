@@ -33,19 +33,26 @@ button{
     margin-top: 20px;
     border: grey 2px solid;
     font-size: 29px;
-    text-shadow: 5px 5px 10px #d1cf80;
+    text-shadow: 5px 5px 10px #0e0e0e;
+    
 }
 .rock{
-    background: url('rock.png');
+    
+    background: url('rock.png') ;
     background-size: cover;
+    z-index: -1;
+    
 }
 .paper{
-    background: url('paper.png');
-    background-size: cover;
+    background: url('paper.png') no-repeat;
+    background-size: contain;
+
 }
 .scissors{
     background: url('scissors.png') no-repeat;
     background-size: contain;
+    color:hsl(0, 0%, 100%);
+   background-position: center;
     
 
     
