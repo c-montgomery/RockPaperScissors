@@ -12,8 +12,6 @@ rockButton.addEventListener('click', choose);
 paperButton.addEventListener('click', choose);
 scissorsButton.addEventListener('click', choose);
 
-let isPlaying = true;
-
 
 
 function choose(e){
